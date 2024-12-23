@@ -1,0 +1,100 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,700&display=swap');
+
+/* CUSTOM PROPERTY */
+:root{
+    /* clrs */
+    --body-font-clr:slategray;
+    --white-clr:#fff;
+    --dark-clr:#2b2b2b;
+    --light-clr:#e6e6e6;
+    --charcoal-blue:#2d3c47;
+    --red-clr:#ff0000;
+    /* typography */
+    --ff-poppins:"Poppins", serif;
+}
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: var(--ff-poppins);
+}
+body{
+    font-size: 1.6rem;
+    background: var(--white-clr);
+    color:var(--body-font-clr);
+    line-height: 1.5;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+/* FAQ */
+
+.faq{
+    max-width: 900px;
+    padding: 5rem 1.6rem;
+    display: grid;
+    gap: 2rem;
+}
+.faq .title{
+    font-size: 3.6rem;
+    line-height: 1.2;
+    color: var(--dark-clr);
+    margin: 3.2rem auto;
+}
+
+.question{
+    background: var(--light-clr);
+}
+.question-title{
+    background: var(--charcoal-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white-clr);
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+.question-title h4{
+    font-size: 1.8rem;
+}
+.question-toggle{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.question-title .close{
+    color: var(--red-clr);
+}
+
+.question-content{
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+.question-content .text{
+    padding: 2rem;
+}
+
+.question-title .open,
+.question-title.active .close{
+    display: block;
+}
+.question-title.active .open,
+.question-title .close{
+    display: none;
+}
+
+.question-title.active + .question-content{
+    max-height: 80rem;
+}
+@media (min-width:768px){
+    .question-title h4{
+        font-size: 2rem;
+    }
+}
